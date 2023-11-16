@@ -1,0 +1,135 @@
+{
+    "nike": [
+        {
+            "id": 1,
+            "name": "Nike Air Force 1 Low Retro",
+            "color": "White",
+            "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5/fbe2af03-4f91-4522-8b47-4fbd41323cd1/air-force-1-low-retro-shoes-FPRmPs.png",
+            "price": "Rp. 2,149,000",
+            "detail": "Original point maker turned streetwear king celebrates 40 years of turning heads. With everything you know best—stitched overlays, crisp leather and the perfect amount of hoops style—the Nike Air Force 1 Low delivers a near 1:1 remake of the original. Happy anniversary."
+        },
+        {
+            "id": 2,
+            "name": "Nike Air Force 1 Mid React",
+            "color": "White and Black",
+            "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f89b2b4e-a7e2-4863-a0c4-2c3133f72d1d/air-force-1-mid-react-shoes-Hbs6fH.png",
+            "price": "Rp. 2,199,000",
+            "detail": "Join the party and celebrate 40 years of pushing sport and fashion boundaries with the Air Force 1 React. Taking a bold step into b-ball iconography, its plush React foam and amplified outsole bring new-age comfort. Polished Gold details and fresh branding that blends logos from past releases honour the fearless off-court look and pay tribute to the AF-1's reign."
+        },
+        {
+            "id": 3,
+            "name": "Nike Air Force Shadow",
+            "color": "Pink Oxford",
+            "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d223ea7d-84a2-44ac-b89a-b6e9b71ed575/air-force-1-shadow-shoes-mN8Glx.png",
+            "price": "Rp. 1,649,000",
+            "detail": "The Nike Air Force 1 Shadow puts a playful twist on a classic b-ball design.Using a layered approach, doubling the branding and exaggerating the midsole, it highlights AF-1 DNA with a bold, new look."
+        },
+        {
+            "id": 4,
+            "name": "Nike Air Force Shadow",
+            "color": "Sail&Sesame",
+            "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fa1a0ce0-cb7c-4f36-a295-1f40986b367b/air-force-1-shadow-shoes-mN8Glx.png",
+            "price": "Rp. 1,649,000",
+            "detail": "The Nike Air Force 1 Shadow puts a playful twist on a classic b-ball design.Using a layered approach, doubling the branding and exaggerating the midsole, it highlights AF-1 DNA with a bold, new look."
+        },
+        {
+            "id": 5,
+            "name": "Nike Air Force 1 '07",
+            "color": "White",
+            "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-WrLlWX.png",
+            "price": "Rp. 1,549,000",
+            "detail": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine."
+        },
+        {
+            "id": 6,
+            "name": "Nike Dunk Low Retro",
+            "color": "University Gold",
+            "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/29bcc60f-ed5a-47b6-9bf7-c3d347358e0a/dunk-low-retro-shoe-66RGqF.png",
+            "price": "Rp. 1,429,000",
+            "detail": "Created for the hardwood but taken to the streets, the Nike Dunk Low Retro returns with crisp overlays and original team colours. This basketball icon channels '80s vibes with premium leather in the upper that looks good and breaks in even better. Modern footwear technology helps bring the comfort into the 21st century."
+        },
+        {
+            "id": 7,
+            "name": "Nike Dunk Low Retro",
+            "color": "George Green",
+            "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e6de4fc3-278e-42fd-804c-a5b6adba60f1/dunk-low-retro-shoe-66RGqF.png",
+            "price": "Rp. 1,429,000",
+            "detail": "Created for the hardwood but taken to the streets, the Nike Dunk Low Retro returns with crisp overlays and original team colours. This basketball icon channels '80s vibes with premium leather in the upper that looks good and breaks in even better. Modern footwear technology helps bring the comfort into the 21st century."
+        },
+        {
+            "id": 8,
+            "name": "Nike Dunk Low Disrupt 2",
+            "color": "Khaki",
+            "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/95b3ec9e-4c7f-4e5a-b223-c87113e8a8a2/dunk-low-disrupt-2-shoes-rmbZnK.png",
+            "price": "Rp. 1,729,000",
+            "detail": "Re-imagining the hoops icon through a lens of self-expression, the Dunk Low Disrupt 2 bridges tried-and-tested style with a customisable design. Double eyestays pair with an offset bottom eyelet (and an extra set of laces) for a unique twist that lets you personalise your look, while its playful layering and rich textures energise every step."
+        },
+        {
+            "id": 9,
+            "name": "Nike Air Max Plus",
+            "color": " Black/Black/Varsity Red/White",
+            "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0410970b-5e8f-49ae-b09c-aed707d47e5a/air-max-plus-shoes-mVwq4h.png",
+            "price": "Rp. 3,169,000",
+            "detail": "The best way to celebrate 25 years of the Air Max Plus? With you, of course. While the breathable knit upper, wavy design lines and gradient colours stay true to the original, the subtle details and high-energy hues pay homage to fan-favourite iterations. Legendary Air Max cushioning offers premium stability and cushioning straight out of the box, which sets you up with high-tech comfort everyone can see."
+        },
+        {
+            "id": 10,
+            "name": "Nike Air Max Pulse Roam",
+            "color": "Stone/Light Bone/Summit White/Stone",
+            "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/493f87d4-86f9-4fc5-8c63-ceff5b81a643/air-max-pulse-roam-shoes-NSfkP0.png",
+            "price": "Rp. 2,489,000",
+            "detail": "The Air Max Pulse Roam takes cues from its stylish forerunner and moves it in a more utilitarian direction. This means durability without the discomfort and style without the effort. Point-loaded Air cushioning—revamped from the incredibly plush Air Max 270—delivers the comfort you've come to trust."
+        }
+    ],
+    "newBalance": [
+        {
+            "id": 1,
+            "name": "New Balance 2002R",
+            "color": "Black with phantom and gunmetal",
+            "image": "https://nb.scene7.com/is/image/NB/m2002rbk_nb_02_i?$pdpflexf2$&qlt=80&fmt=webp&wid=472&hei=472",
+            "price": "$139.99",
+            "detail": "Our 2002R sneakers for men prove that slick kicks can still be comfortable. The premium suede and mesh upper is inspired by running shoes from the 2000s for a retro-meets-modern aesthetic that cements your status as a style influencer. The ABZORB midsole and ABZORB SBS heel cushioning deliver lasting comfort while the Stability Web and N-ergy outsole offer arch support and shock absorption, so you can go all day."
+        },
+        {
+            "id": 2,
+            "name": "New Balance 2002R",
+            "color": "Steel with lead and orca",
+            "image": "https://nb.scene7.com/is/image/NB/m2002rst_nb_02_i?$pdpflexf2$&qlt=80&fmt=webp&wid=472&hei=472",
+            "price": "$139.99",
+            "detail": "Our 2002R sneakers for men prove that slick kicks can still be comfortable. The premium suede and mesh upper is inspired by running shoes from the 2000s for a retro-meets-modern aesthetic that cements your status as a style influencer. The ABZORB midsole and ABZORB SBS heel cushioning deliver lasting comfort while the Stability Web and N-ergy outsole offer arch support and shock absorption, so you can go all day."
+        },
+        {
+            "id": 3,
+            "name": "New Balance 2002RX",
+            "color": "Castlerock with natural indigo and brushed nickel",
+            "image": "https://nb.scene7.com/is/image/NB/m2002rxc_nb_02_i?$pdpflexf2$&qlt=80&fmt=webp&wid=472&hei=472",
+            "price": "$179.99",
+            "detail": "A modern twist on 2000s running designs, the 2002RX men's sneaker will elevate your everyday style. This throwback silhouette is crafted with premium suede and mesh for a look that sets you apart and GoreTex technology that adds protection from the elements. Underfoot, ABZORB cushioning and Stability Web technology give you the support and comfort you need to power through your day."
+        }
+    ],
+    "converse": [
+        {
+            "id": 1,
+            "name": "Unisex Converse Chuck 70 High Top",
+            "color": "Parchment",
+            "image": "https://www.converse.com.au/media/catalog/product/cache/122ed3c57cbb9e5a97d45d900d4f4066/u/n/unisex_converse_chuck_taylor_all_star_70_high_top_parchment_162053_3.jpg",
+            "price": "$140.00",
+            "detail": "The Converse All Star Chuck '70 is our re-crafted sneaker that uses modern details to celebrate the original Chuck Taylor All Star from the 1970s. Vintage details include stitching on the sidewall and a heavier-grade canvas upper for comfort and durability."
+        },
+        {
+            "id": 2,
+            "name": "Converse X Comme des Garçons PLAY Chuck 70 High Top",
+            "color": "Pristine",
+            "image": "https://www.converse.com.au/media/catalog/product/cache/122ed3c57cbb9e5a97d45d900d4f4066/u/n/unisex_converse_x_comme_des_garcons_chuck_70_high_top_pristine_a01794_3.jpg",
+            "price": "$240.00",
+            "detail": "After 12 years of an iconic partnership, we’re celebrating the young creatives who push the boundaries of culture through art, music and skateboarding. Featuring a first-ever red foxing and odes to collaboration’s heritage, this bold new design is made for those who follow their heart – and their own footsteps. The Converse x CDG PLAY legacy continues. A new street icon is born. "
+        }
+    ],
+    "login": [
+        {
+            "id": 1,
+            "username": "admin",
+            "password": "admin"
+        }
+    ]
+}
