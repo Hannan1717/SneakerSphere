@@ -1,14 +1,14 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { useSneakerContext } from "../provider/SneakerContext";
+// import { useSneakerContext } from "../provider/SneakerContext";
 import { useNavigate } from "react-router-dom";
 
 export default function Navigation() {
-    const { isLoggedIn, setLoggedIn } = useSneakerContext();
+    // const { isLoggedIn, setLoggedIn } = useSneakerContext();
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        setLoggedIn(false);
-        console.log(isLoggedIn);
+        // setLoggedIn(false);
+        // console.log(isLoggedIn);
         navigate("/login");
     };
     return (

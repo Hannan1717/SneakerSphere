@@ -1,9 +1,19 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { useSneakerContext } from "../provider/SneakerContext";
-
+// import { useSneakerContext } from "../provider/SneakerContext";
+import { useNavigate } from "react-router-dom";
+import { ShoesContext } from "../provider/ShoesContext";
+import { useContext, useEffect } from "react";
 export default function Homepage() {
-    const { isLoggedIn } = useSneakerContext();
-    console.log(isLoggedIn);
+    const { isLoggedIn } = useContext(ShoesContext);
+    const navigate = useNavigate();
+    useEffect(() => {
+        function validatePage() {
+            if (!isLoggedIn) {
+                navigate("/start");
+            }
+        }
+        validatePage();
+    }, []);
     return (
         <div>
             <header
