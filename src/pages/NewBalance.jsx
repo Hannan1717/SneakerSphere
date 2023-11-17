@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 export default function NewBalance() {
     // const { sneakers } = useSneakerContext();
     const { isLoggedIn } = useContext(ShoesContext);
+    console.log(isLoggedIn);
 
     const navigate = useNavigate();
     useEffect(() => {
