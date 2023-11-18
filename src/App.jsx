@@ -6,45 +6,26 @@ import Nike from "./pages/Nike";
 import NewBalance from "./pages/NewBalance";
 import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
-import { useSneakerContext } from "./provider/SneakerContext";
-import { Navigate } from "react-router-dom";
+import { SneakerProvider } from "./provider/SneakerContext";
+// import { Navigate } from "react-router-dom";
 
 function App() {
-    const { isLoggedIn } = useSneakerContext();
-
     return (
         <>
             <Router>
-                <Navigation />
-                <Routes>
-                    <Route
-                        path="/"
-                        element={
-                            isLoggedIn ? <Homepage /> : <Navigate to="/login" />
-                        }
-                    />
-                    <Route
-                        path="/nike"
-                        element={
-                            isLoggedIn ? <Nike /> : <Navigate to="/login" />
-                        }
-                    />
-                    <Route
-                        path="/newBalance"
-                        element={
-                            isLoggedIn ? (
-                                <NewBalance />
-                            ) : (
-                                <Navigate to="/login" />
-                            )
-                        }
-                    />
-                    <Route
-                        path="/detailsneaker/:id"
-                        element={<DetailSneaker />}
-                    />
-                    <Route path="/login" element={<Login />} />
-                </Routes>
+                <SneakerProvider>
+                    <Navigation />
+                    <Routes>
+                        <Route path="/" element={<Homepage />} />
+                        <Route path="/nike" element={<Nike />} />
+                        <Route path="/newBalance" element={<NewBalance />} />
+                        <Route
+                            path="/detailsneaker/:id"
+                            element={<DetailSneaker />}
+                        />
+                        <Route path="/login" element={<Login />} />
+                    </Routes>
+                </SneakerProvider>
             </Router>
         </>
     );

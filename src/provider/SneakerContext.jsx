@@ -4,7 +4,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
-
+import { useLocation } from "react-router-dom";
 const SneakerContext = createContext();
 
 export function useSneakerContext() {
@@ -22,7 +22,7 @@ export function SneakerProvider({ children }) {
     const [sneakersNb, setSneakersNb] = useState([]);
     const [selectedBrand, setSelectedBrand] = useState("nike");
     const [isLoggedIn, setLoggedIn] = useState(false);
-
+    const location = useLocation();
     useEffect(() => {
         async function fetchData() {
             try {
@@ -32,6 +32,7 @@ export function SneakerProvider({ children }) {
                 );
                 setSneakersNike(dataNike.data);
                 setSneakersNb(dataNb.data);
+                console.log("Data fetched successfully");
             } catch (error) {
                 console.error("Error fetching data:", error);
                 window.alert("Error fetching data");
@@ -41,12 +42,14 @@ export function SneakerProvider({ children }) {
         fetchData();
 
         // Perbarui selectedBrand berdasarkan path yang diakses
-        if (window.location.pathname === "/") {
+        if (location.pathname === "/nike") {
             setSelectedBrand("nike");
-        } else if (window.location.pathname === "/newbalance") {
+        } else if (location.pathname === "/newBalance") {
             setSelectedBrand("newBalance");
         }
-    }, []);
+        console.log(selectedBrand);
+        console.log("useEffect executed");
+    }, [location.pathname]);
 
     const handleLogin = async (username, password) => {
         try {

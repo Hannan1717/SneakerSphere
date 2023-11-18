@@ -4,10 +4,10 @@ import { Card, Form, Button, FloatingLabel } from "react-bootstrap";
 import { useSneakerContext } from "../provider/SneakerContext";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
-    const { handleLogin } = useSneakerContext();
+    const { handleLogin, isLoggedIn } = useSneakerContext();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
+    console.log(isLoggedIn);
     const navigate = useNavigate();
     const handleLoginClick = async () => {
         await handleLogin(username, password);

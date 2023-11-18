@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import CardSneaker from "../components/CardSneaker";
 import SearchBar from "../components/SearchBar";
 import PaginationButtons from "../components/PaginationButtons";
 import { useSneakerContext } from "../provider/SneakerContext";
-
+import { useNavigate } from "react-router-dom";
 export default function Nike() {
-    const { sneakers } = useSneakerContext();
+    const { sneakers, isLoggedIn } = useSneakerContext();
     const [searchTerm, setSearchTerm] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const sneakersPerPage = 5; // Jumlah sepatu per halaman
+    console.log(isLoggedIn);
+    // Efek samping atau kondisi lain
 
     // Searching logic
     const filteredSneakers = sneakers.filter((sneaker) =>
@@ -23,7 +25,15 @@ export default function Nike() {
         indexOfFirstSneaker,
         indexOfLastSneaker
     );
-
+    const navigate = useNavigate();
+    useEffect(() => {
+        function validatePage() {
+            if (!isLoggedIn) {
+                navigate("/login");
+            }
+        }
+        validatePage();
+    }, [isLoggedIn]);
     // Render komponen Nike
     return (
         <Container style={{ paddingTop: "40px" }}>
