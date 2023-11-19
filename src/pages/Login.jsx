@@ -1,5 +1,5 @@
 // Login.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, Form, Button, FloatingLabel } from "react-bootstrap";
 import { useSneakerContext } from "../provider/SneakerContext";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +14,12 @@ const Login = () => {
         navigate("/");
     };
 
+    useEffect(() => {
+        // Jika sudah login, langsung arahkan ke halaman utama
+        if (isLoggedIn) {
+            navigate("/");
+        }
+    }, [isLoggedIn, navigate]);
     return (
         <div className="d-flex justify-content-center align-items-center vh-100">
             <Card style={{ width: "500px" }}>

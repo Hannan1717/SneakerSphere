@@ -2,9 +2,11 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+// SneakerContext.jsx
 import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+
 const SneakerContext = createContext();
 
 export function useSneakerContext() {
@@ -20,36 +22,29 @@ export function useSneakerContext() {
 export function SneakerProvider({ children }) {
     const [sneakersNike, setSneakersNike] = useState([]);
     const [sneakersNb, setSneakersNb] = useState([]);
-    const [selectedBrand, setSelectedBrand] = useState("nike");
-    const [isLoggedIn, setLoggedIn] = useState(false);
+    const [isLoggedIn, setLoggedIn] = useState(
+        localStorage.getItem("isLoggedIn")
+    );
     const location = useLocation();
+
+    const fetchData = async () => {
+        try {
+            const dataNike = await axios.get("http://localhost:3001/nike");
+            const dataNb = await axios.get("http://localhost:3001/newBalance");
+            setSneakersNike(dataNike.data);
+            setSneakersNb(dataNb.data);
+            console.log("Data fetched successfully");
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            window.alert("Error fetching data");
+        }
+    };
+
     useEffect(() => {
-        async function fetchData() {
-            try {
-                const dataNike = await axios.get("http://localhost:3001/nike");
-                const dataNb = await axios.get(
-                    "http://localhost:3001/newBalance"
-                );
-                setSneakersNike(dataNike.data);
-                setSneakersNb(dataNb.data);
-                console.log("Data fetched successfully");
-            } catch (error) {
-                console.error("Error fetching data:", error);
-                window.alert("Error fetching data");
-            }
+        if (isLoggedIn) {
+            fetchData();
         }
-
-        fetchData();
-
-        // Perbarui selectedBrand berdasarkan path yang diakses
-        if (location.pathname === "/nike") {
-            setSelectedBrand("nike");
-        } else if (location.pathname === "/newBalance") {
-            setSelectedBrand("newBalance");
-        }
-        console.log(selectedBrand);
-        console.log("useEffect executed");
-    }, [location.pathname]);
+    }, [isLoggedIn]);
 
     const handleLogin = async (username, password) => {
         try {
@@ -63,6 +58,7 @@ export function SneakerProvider({ children }) {
                         dataUser.password === password
                     ) {
                         setLoggedIn(true);
+                        localStorage.setItem("isLoggedIn", "true");
                         console.log("Success login");
                     } else {
                         console.error("Gagal login");
@@ -81,8 +77,8 @@ export function SneakerProvider({ children }) {
     return (
         <SneakerContext.Provider
             value={{
-                sneakers: selectedBrand === "nike" ? sneakersNike : sneakersNb,
-                selectedBrand,
+                sneakers:
+                    location.pathname === "/nike" ? sneakersNike : sneakersNb,
                 isLoggedIn,
                 setLoggedIn,
                 handleLogin,

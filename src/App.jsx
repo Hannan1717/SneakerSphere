@@ -7,7 +7,6 @@ import NewBalance from "./pages/NewBalance";
 import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
 import { SneakerProvider } from "./provider/SneakerContext";
-// import { Navigate } from "react-router-dom";
 
 function App() {
     return (

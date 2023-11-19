@@ -4,8 +4,7 @@ import { useSneakerContext } from "../provider/SneakerContext";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 export default function NewBalance() {
-    const { sneakers, isLoggedIn, selectedBrand } = useSneakerContext();
-    console.log(isLoggedIn + selectedBrand);
+    const { sneakers, isLoggedIn } = useSneakerContext();
     const navigate = useNavigate();
 
     useEffect(() => {

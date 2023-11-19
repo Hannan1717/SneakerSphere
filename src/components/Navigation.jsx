@@ -9,6 +9,7 @@ export default function Navigation() {
     const handleLogout = () => {
         setLoggedIn(false);
         console.log(isLoggedIn);
+        localStorage.clear();
         navigate("/login");
     };
     return (
