@@ -22,6 +22,7 @@ export function useSneakerContext() {
 export function SneakerProvider({ children }) {
     const [sneakersNike, setSneakersNike] = useState([]);
     const [sneakersNb, setSneakersNb] = useState([]);
+    const [selected, setSelected] = useState(localStorage.getItem("selected"));
     const [isLoggedIn, setLoggedIn] = useState(
         localStorage.getItem("isLoggedIn")
     );
@@ -44,7 +45,14 @@ export function SneakerProvider({ children }) {
         if (isLoggedIn) {
             fetchData();
         }
-    }, [isLoggedIn]);
+        if (window.location.pathname === "/nike") {
+            setSelected(true);
+            localStorage.setItem("selected", "true");
+        } else if (window.location.pathname === "/newBalance") {
+            setSelected(false);
+            localStorage.setItem("selected", "false");
+        }
+    }, [isLoggedIn, window.location.pathname]);
 
     const handleLogin = async (username, password) => {
         try {
@@ -77,8 +85,7 @@ export function SneakerProvider({ children }) {
     return (
         <SneakerContext.Provider
             value={{
-                sneakers:
-                    location.pathname === "/nike" ? sneakersNike : sneakersNb,
+                sneakers: selected ? sneakersNike : sneakersNb,
                 isLoggedIn,
                 setLoggedIn,
                 handleLogin,

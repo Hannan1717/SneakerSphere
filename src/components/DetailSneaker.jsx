@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useSneakerContext } from "../provider/SneakerContext";
 import { Container, Row, Card } from "react-bootstrap";
-
 export default function DetailSneaker() {
     const { id } = useParams();
-    const { sneakers } = useSneakerContext();
+    const { sneakers, selected } = useSneakerContext();
+
+    console.log("brand" + selected);
 
     if (!sneakers || sneakers.length === 0) {
         return <div>Loading...</div>;
