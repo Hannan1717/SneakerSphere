@@ -1,17 +1,33 @@
 // Login.jsx
 import { useState, useEffect } from "react";
 import { Card, Form, Button, FloatingLabel } from "react-bootstrap";
-import { useSneakerContext } from "../provider/SneakerContext";
+import { useSneakerContext } from "../../provider/SneakerContext";
 import { useNavigate } from "react-router-dom";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+const auth = getAuth();
+
 const Login = () => {
-    const { handleLogin, isLoggedIn } = useSneakerContext();
-    const [username, setUsername] = useState("");
+    const { isLoggedIn, setLoggedIn } = useSneakerContext();
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     console.log(isLoggedIn);
     const navigate = useNavigate();
-    const handleLoginClick = async () => {
-        await handleLogin(username, password);
-        navigate("/");
+
+    const signIn = (e) => {
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                console.log(userCredential.user);
+                setLoggedIn(true);
+                localStorage.setItem("isLoggedIn", "true");
+                console.log("Success login");
+                // ...
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 
     useEffect(() => {
@@ -20,6 +36,7 @@ const Login = () => {
             navigate("/");
         }
     }, [isLoggedIn, navigate]);
+
     return (
         <div className="d-flex justify-content-center align-items-center vh-100">
             <Card style={{ width: "500px" }}>
@@ -31,19 +48,17 @@ const Login = () => {
                         Login
                     </Card.Title>
                     <Form>
-                        <Form.Group controlId="formUsername">
+                        <Form.Group controlId="formemail">
                             <FloatingLabel
                                 controlId="floatingInput"
-                                label="Username"
+                                label="email"
                                 className="mb-3"
                             >
                                 <Form.Control
                                     type="text"
-                                    placeholder="Enter your username"
-                                    value={username}
-                                    onChange={(e) =>
-                                        setUsername(e.target.value)
-                                    }
+                                    placeholder="Enter your email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                 />
                             </FloatingLabel>
                         </Form.Group>
@@ -68,7 +83,7 @@ const Login = () => {
                         <Button
                             variant="outline-primary"
                             type="button"
-                            onClick={handleLoginClick}
+                            onClick={signIn}
                         >
                             Login
                         </Button>

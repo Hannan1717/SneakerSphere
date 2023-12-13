@@ -54,41 +54,12 @@ export function SneakerProvider({ children }) {
         }
     }, [isLoggedIn, window.location.pathname]);
 
-    const handleLogin = async (username, password) => {
-        try {
-            const response = await fetch("http://localhost:3001/login");
-            if (response.ok) {
-                const userDataArray = await response.json();
-                if (userDataArray.length > 0) {
-                    const dataUser = userDataArray[0];
-                    if (
-                        dataUser.username === username &&
-                        dataUser.password === password
-                    ) {
-                        setLoggedIn(true);
-                        localStorage.setItem("isLoggedIn", "true");
-                        console.log("Success login");
-                    } else {
-                        console.error("Gagal login");
-                    }
-                } else {
-                    console.error("Data user tidak ditemukan");
-                }
-            } else {
-                console.error("Gagal login");
-            }
-        } catch (error) {
-            console.error("Terjadi kesalahan", error);
-        }
-    };
-
     return (
         <SneakerContext.Provider
             value={{
                 sneakers: selected ? sneakersNike : sneakersNb,
                 isLoggedIn,
                 setLoggedIn,
-                handleLogin,
             }}
         >
             {children}

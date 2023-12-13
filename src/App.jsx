@@ -5,7 +5,8 @@ import DetailSneaker from "./components/DetailSneaker";
 import Nike from "./pages/Nike";
 import NewBalance from "./pages/NewBalance";
 import Homepage from "./pages/Homepage";
-import Login from "./pages/Login";
+import Login from "./pages/Auth/Login";
+import SignUp from "./pages/Auth/SignUp";
 import { SneakerProvider } from "./provider/SneakerContext";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
                             element={<DetailSneaker />}
                         />
                         <Route path="/login" element={<Login />} />
+                        <Route path="/signup" element={<SignUp />} />
                     </Routes>
                 </SneakerProvider>
             </Router>
