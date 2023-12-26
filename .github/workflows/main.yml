@@ -1,1 +1,35 @@
-test
+name: CI/CD Flow Devops Hannan
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  build-and-deploy:
+
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout code to runner
+      uses: actions/checkout@v3
+
+    - name: Check runner ip address  
+      run: ip addr sh
+    
+    - name: build and deploy to daftar sulfat server
+      uses: appleboy/ssh-action@v1.0.1
+      with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd code
+            git pull origin main
+            DOCKER_BUILDKIT=1 docker build -t daftarsulfat:latest .
+            cd ..
+            cd run
+            docker-compose down
+            docker-compose up -d
+            docker exec daftarsulfat pm2 start /var/www/html/public/js/ssr.js --name daftarsulfat-ssr
